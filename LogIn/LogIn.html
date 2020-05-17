@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+	<style>
+		<!--
+		/*使页面占据整个屏幕*/
+		*{margin:0 auto;}
+		/*背景div框设置*/
+		.backgroundContainer{
+			width:100%;
+			height:750px;
+			background:url(img/background1.jpg);
+			position:fixed;
+		}
+		/*登录部分div框设置*/
+		.fields{
+			text-align:center;
+			color:#FFFFFF;
+			background-color: rgba(221,221,221,0.30);
+			/*background:linear-gradient(to top,#dcdcdc 0%,#adadad 50%);*/
+/*			background:#cccccc;*/
+			width:450px;
+			height:260px;
+			padding:40px;
+			margin:200px auto;
+			/*box-shadow: 0px 1px 2px 1px #aaaaaa;*/
+			/*border-radius:3px;*/
+		}
+		.row{
+			margin: 1em;
+			position: relative;
+		}
+		.row label{
+			color:#000000;
+			position:absolute;
+			left:75px;
+			top:8px;
+				
+		}
+		.row input{
+			width: 200px;
+			height: 40px;/*字段宽高样式*/
+			padding-left: 60px;
+		}
+		.logBtn{
+			background-color: #FFFFFF;
+			border: none;
+			color: #5C5C5C;
+			padding: 6px 6px;
+			height: 35px;
+			width: 260px
+		}/*登陆提交按钮样式*/
+		
+		fieldset{
+			border: none;
+		}/*无表单边框*/
+		label{
+			cursor: pointer;
+		}/*光标呈现为指示链接的指针（一只手）*/
+		
+		
+		
+		/*部分字体大小设置*/
+		.text a{
+			font-size:13px;
+			display: inline-block;
+			padding: 0 4em
+		}
+		/*返回首页字体设置*/
+		.back{
+			font-size:13px;
+			text-align:right;
+		}
+		/*对跳转链接的样式设置*/
+		p a{
+			list-style:none;
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+		/*鼠标放上去跳转链接字体变色*/
+		p a:hover{
+			color:#9D9D9D;
+		}
+		-->
+	</style>
+</head>
+
+<body>
+	<div class="backgroundContainer">
+		<!--具体登录内容-->
+		<div class="fields">
+			<h2>用户登录</h2>
+			<fieldset>
+				<form method="post">
+					<div class="row">
+						<label for="account">
+							<img src="img/account.png" alt="账户">
+						</label>
+						<input type="text" id="account" name="account" required="required" aria-required="true"/>
+					</div>
+					<div class="row">
+						<label for="password">
+							<img src="img/password.png" alt="密码">
+						</label>
+						<input type="password" id="password" name="password" required="required" aria-required="true" autocomplete="off"/>
+					</div>
+					<input type="submit" value="登录" class="logBtn">
+				</form>
+			</fieldset>
+			<p class="text">
+					<!--忘记密码和注册用户还没有添加相关信息，仅做摆设，使网页看起来完整-->
+				<a href="LogIn.html">忘记密码?</a>
+				<a href="LogIn.html">注册用户</a>
+			</p>
+			<p class="back">
+				<a href="../index.html">返回首页</a>
+			</p>	
+			
+		</div>
+	</div>
+</body>
+</html>

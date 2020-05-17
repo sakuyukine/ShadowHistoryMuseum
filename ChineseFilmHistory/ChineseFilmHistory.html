@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<!--中国电影史部分-->
+<title>中国电影史</title>
+	<style>
+		<!--
+		/** 覆盖默认样式 **/
+		body{
+				/* center page in the browser */
+				width: 100%;
+				margin: 0 auto;
+			}/*框架-居中*/
+		footer{
+			position: relative;
+			top:40px;
+		}
+		ul li{
+			float:left;
+			list-style:none;
+			width:200px;
+			height:60px;
+			border-left:1px solid #ccc;
+			line-height: 50px;
+			text-align: center;
+			background-color: #FFFFFF;
+		}
+		h2{
+			padding: 133px;
+			text-align: center;
+			clear: both;
+			display: block;
+			font-size:40px;
+			letter-spacing: 4px;
+			color:#FFFFFF;
+			font-family: "宋体";
+		}/*文章标题样式*/
+		h2+div{
+			width:50%;
+			box-sizing: border-box;
+			padding:1em 1em 0em 1em;
+			min-height: 816px;
+		}/*简介文字盒子样式*/
+		h3{
+			text-align: center;
+			font-size:22px;
+			letter-spacing: 2px;
+		}/*简介文字标题样式*/
+		main p{
+			box-sizing: border-box;
+			padding: 0em 0.5em 0em 1em;
+			letter-spacing: 3px;
+			line-height: 2em;
+			text-indent: 2em;	
+		}/*简介文字段落样式*/
+		img{
+			display: block;
+			margin:0em 0em 2.5em;
+			border: 3px solid #A9A9A9;
+		}/*所有图片样式*/
+		
+		
+		/** 导航栏链接 **/
+		.naviContainer{
+			margin-top:-49px;
+			width: 100%;
+			height:76px;
+			background-color: #FFFFFF;
+			position:fixed;
+			z-index: 5;
+		}
+		ul a:link{
+			color:#000000;
+			text-decoration: none;}
+		ul a:visited{
+			color:#000000;
+			text-decoration: none;
+		}
+		ul a:hover{
+			color:#9D9D9D;
+			text-decoration: none;
+		}
+		ul a:active{
+			color:#FFFFFF;
+			text-decoration: none;
+		}
+		.bold{
+			font-weight:bold;
+		}/*当前页面字体加粗标识*//*新增*/
+		
+		
+		/** 下拉菜单样式 **/
+		.naviContainer ul li ul{
+			padding-left:0px;
+			margin-top:10px;
+		}
+		.naviContainer ul li ul li{
+			display:none;
+			width:200px;
+			height:50px;
+			float:initial;
+			text-align:center;
+		}
+		.naviContainer ul li:hover ul li{
+			display:block;
+		}
+		.naviContainer ul li:hover{
+			background:#011B42;
+			width:200px;
+			height:60px;
+		}
+		
+		
+		/** 搜索框样式 **/
+		.search{
+			/*float:right;*/
+			position:absolute;
+			left:80%;
+			top:25px;
+		}/*定位：居导航栏右侧*/
+		fieldset{
+			border: none;
+		}/*无表单边框*/
+		label{
+			cursor: pointer;
+		}/*光标呈现为指示链接的指针（一只手）*/
+		.search input{
+			height: 30px;
+			text-align: center;
+		}
+		.goBtn{
+			background-color: #5C5C5C;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 2px 2px 2px #333;
+			color: #FFFFFF;
+			padding: 6px 6px;
+			text-shadow: 1px 1px 0px #777;
+		}/*提交按钮样式*/
+		
+		
+		
+		/** 早期电影 **/
+		.firstStage h2{
+			background:url(img/background.jpg) no-repeat;
+			background-size:100% 100%;
+			height:160px;
+		}/*早期电影时期的文章背景样式*/
+		.firstIntro {
+			display: inline-block;
+			position: relative;
+			left:8%;
+			background:#F0F0F0;
+		}/*早期的电影时期的简介文字盒子样式*/
+		.firstSample{
+			width:20%;
+			max-height: 840px;
+			box-sizing: border-box;
+			padding: 1em;
+			float:right;
+			position: relative;
+			left:-8%;
+		}/*早期电影时期的图片盒子样式*/
+		.firstSample img{
+			position: relative;
+			top:-16px;
+		}/*早期电影时期图片位置调整*/
+		
+		
+		
+		/** 十七年时期的电影 **/
+		.secondStage h2{
+			background: url(img/background2.jpg) no-repeat;
+			background-size:100% 100%;
+			height:160px;
+		}/*十七年时期的电影的文章背景样式*/
+		.secondIntro{
+			float:right;
+			position: relative;
+			left: -8%;
+			background:#F0F0F0;
+		}/*十七年时期的电影的简介文字盒子样式*/
+		.secondSample{
+			width:20%;
+			max-height: 840px;
+			box-sizing: border-box;
+			padding: 1em;
+			position: relative;
+			left: 16%
+		}/*十七年时期的电影的图片盒子样式*/
+		.secondSample img{
+			position: relative;
+			top:-16px;
+		}/*十七年时期的电影的图片位置调整*/
+		
+		
+		
+		/**新时期电影**/
+		.thirdStage h2{
+			background:url(img/background3.jpg) no-repeat;
+			background-size:100% 100%;
+			height:160px;
+		}/*新时期电影的文章背景样式*/
+		.thirdIntro{
+			display: inline-block;
+			position: relative;
+			left: 8%;
+			background:#F0F0F0;
+		}/*新时期电影的简介文字盒子样式*/
+		.thirdSample{
+			width:20%;
+			max-height: 840px;
+			box-sizing: border-box;
+			padding: 1em;
+			float:right;
+			position: relative;
+			left:-8%;
+		}/*新时期电影的图片盒子样式*/
+		.thirdSample img{
+			position: relative;
+			top:-16px;
+		}/*新时期电影的图片位置调整*/
+		
+		.footerContainer{
+			margin: 2em 0;
+			text-align: center;
+		}
+		.footerContainer p{
+			font-size:13px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:center;
+			font-family:wellfleet;
+		}
+		-->
+	</style>
+</head>
+<body>
+	<!-- === 开始页眉级内容 === -->
+	<header class="naviContainer">
+		<nav>
+			<div class="search">
+				<form method="get">
+					<fieldset>
+						<input type="search" placeholder="输入你想查找的内容">
+						<input type="submit" value="go" class="goBtn"/>
+					</fieldset>
+				</form>
+			</div>
+			<ul style="padding-left:0px;">
+				<li>
+					<a href="../index.html" style="font-size: 26px; width: 200px;">影史馆</a>
+				</li>
+				<li>
+					<a href="../WorldFilmHistory/WorldFilmHistory.html">世界电影史</a>
+					<!--新增的下拉菜单-->
+					<ul>
+						<li>
+							<a href="../WorldFilmHistory/WorldFilmHistory.html#T1">早期电影</a>
+						</li>
+						<li>
+							<a href="../WorldFilmHistory/WorldFilmHistory.html#T2">无声电影</a>
+						</li>
+						<li>
+							<a href="../WorldFilmHistory/WorldFilmHistory.html#T3">有声电影</a>
+						</li>
+						<li>
+							<a href="../WorldFilmHistory/WorldFilmHistory.html#T4">彩色电影</a>
+						</li>
+						<li>									
+							<a href="../WorldFilmHistory/WorldFilmHistory.html#T5">当代电影</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="ChineseFilmHistory.html">
+						<span class="bold">中国电影史</span>
+					</a>
+					<!--新增的下拉菜单-->
+					<ul>
+						<li>
+							<a href="#P1">早期电影时期</a>
+						</li>
+						<li>
+							<a href="#P2">十七年时期的电影</a>
+						</li>
+						<li>
+							<a href="#P3">新时期以来的电影</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../oscar/oscar.html">奥斯卡最佳影片选</a>
+				</li>
+				<li>
+					<a href="../AboutUs/AboutUs.html">关于我们</a>
+				</li>
+				<li>
+					<a href="../LogIn/LogIn.html">登录</a>
+				</li>
+			</ul>
+			
+		</nav>
+	</header>
+	<!-- === 开始正文内容 === -->
+	<main>
+		<!-- == 第一阶段早期电影时期的内容 == -->
+		<article class="firstStage">
+			<h2 id="P1">早期电影时期<br><br>Early Film Period</h2>
+			<div class="firstIntro">
+				<h3>深度融合的主体性构建</h3>
+				<p>20世纪初，在经过了近十年的外国短片放映后，国人开始摄制自己的影片，但都没有将镜头指向西方电影中的杂耍和生活片段，而是从我们传统的中国戏曲故事和反映当代人生活的文明新戏中汲取创作灵感和营养，并获得叙事能力，这样的尝试既符合中国老百姓的审美趣味，也为中国的民族电影找到了本土化的依傍。</p>
+				<p>20年代中期,“国货”电影大受欢迎，中国电影人的创造意识得到了第一次普遍意义上的觉醒，“明星”、“长城”、“神州”、“上海影戏”、“大中华百合”、“天一”等公司各树一帜、流派纷呈; 家庭伦理片、社会片、爱情片先后出现，继之古 装片、武侠片、神怪片风潮大盛。在这些电影中，以郑正秋的电影作品为代表的家庭伦理剧以一种雅俗共赏的方式表出“民族自救”这一重大主题，以张石川为代表的鸳鸯蝴蝶派电影，也在商业娱乐中辨识出其对启蒙教化的深切关注，而古装片、武侠片与武侠神怪片三个类型的影片更是依托借鉴了中华民族叙事传统中的传奇故事。</p>
+				<p>三四十年代民族主义在左翼电影中得到了更为清晰的阐释。随着国土的沦丧，爱国情绪高涨，中国电影顺势而为，逐步由早期的爱情、武侠、神怪等流行题材转向了关注民族的生存危机。</p>
+				<p>毫无疑问，中国民族电影自其诞生之日起就受到外国电影的影响，无论是电影创作的方法、技术，还是电影观念与审美情趣，都受到西方电影的深刻影响。此外，由好莱坞与中国古代传奇叙事互渗所形成的以影像述传奇的电影观念也深入到中国电影中，成为左右早期中国电影整体性认知和电影行为的“基因性存在”，并最终成为民族电影叙事传统中最为鲜明的叙事特征。</p>
+			</div>
+			<!--这里是早期电影时期的相关图片与链接-->
+			<div class="firstSample">
+				<a href="https://baike.baidu.com/item/%E5%AE%9A%E5%86%9B%E5%B1%B1/3387114?fr=aladdin" target="_blank"><img src="img/poster1.jpg" alt="定军山剧照"></a>
+				<a href="https://baike.baidu.com/item/%E6%AD%8C%E5%A5%B3%E7%BA%A2%E7%89%A1%E4%B8%B9/73476" target="_blank"><img src="img/poster2.jpg" alt="歌女红牡丹海报"></a>
+				<a href="https://baike.baidu.com/item/%E9%A3%8E%E4%BA%91%E5%84%BF%E5%A5%B3/84257" target="_blank"><img src="img/poster3.jpg" alt="风云儿女海报"></a>
+			</div>
+		</article>
+		<!-- == 第二阶段十七年时期的电影的内容 == -->
+		<article class="secondStage">
+			<h2 id="P2">十七年时期的电影<br><br>Seventeen Years Period Film</h2>
+			<div class="secondIntro">
+				<h3>平行发展的三种中国民族电影</h3>
+				<p>在“十七年”（1949-1966）前后这一历史时段,世界电影格局发生了深刻的变革:意大利新现实主义兴起; 法国新浪潮崛起，它与意大利新现实主义分化后的费里尼、安东尼奥尼以及北欧导演伯格曼等创作一起，形成了席卷欧洲的现代主义潮流。而中国由于历史、内战和国际形势的原因，导致上个世纪50年代开始的中国电影呈大陆、香港、台湾分立发展的生态。在内地，新中国的成立揭开了中国电影崭新的一页，电影人适应国家、人民对电影的要求，真诚地表现革命斗争和真理，革命“英雄传奇”的叙事模式迅即生成。</p>
+				<p>50年代的台湾地区进入了所谓的威权时代，以“中影”为首的官营制作机构推出了一系列反共宣传电影，在意识形态领域进行强行整合和重构。为了填补和满足了被宣传电影所遮蔽的民间娱乐诉求，从而掀起了长达十余年的“台语片”创作浪潮，但最终在官方的冷落和外片的夹击下逐渐衰落。60年代的“健康写实主义”推行了李行、白景瑞、丁善玺等成熟的本土导演，他们以“乡土电影”“琼瑶电影”“战争历史电影”带动了台湾的第一个黄金年代。</p>
+				<p>香港在整个冷战时期是东西方意识形态的角斗场，在这种气氛下，当时的众多电影人也面临着“左右两难”的境地。50 年代后期，左右两派的斗争被市场的力量进一步冲淡，随着“电懋”“邵氏”等公司的崛起，香港影坛也进一步摆脱政治影响而建立起“商业至上”的生存法则。</p>
+				<p>正是中国内地电影以国为家的政治话语、台湾电影以家为国的道德关怀与香港电影无家无国的漂泊意识，形成彼此之间的互补与对话，才在一定程度上完成了1949年至1979年间中国电影文化的整体性建构。</p>
+			</div>
+			<!--这里是十七年时期的电影的相关图片与链接-->
+			<div class="secondSample">
+				<a href="https://baike.baidu.com/item/%E7%BA%A2%E8%89%B2%E5%A8%98%E5%AD%90%E5%86%9B/3534159"
+				target="_blank"><img src="img/poster4.jpg" alt="红色娘子军海报"></a>
+				<a href="https://baike.baidu.com/item/%E7%8E%8B%E5%93%A5%E6%9F%B3%E5%93%A5%E6%B8%B8%E5%8F%B0%E6%B9%BE" target="_blank"><img src="img/poster5.jpg" alt="王哥柳哥游台湾海报"></a>
+				<a href="https://baike.baidu.com/item/%E6%B1%9F%E5%B1%B1%E7%BE%8E%E4%BA%BA/11003544" target="_blank"><img src="img/poster6.jpg" alt="江山美人海报"></a>
+			</div>
+		</article>
+		<!-- == 第三阶段新时期以来的电影的内容 == -->
+		<article class="thirdStage">
+			<h2 id="P3">新时期以来的电影<br><br>Movie From the New Era</h2>
+			<div class="thirdIntro">
+				<h3>新电影中的多元主体表达</h3>
+				<p>七十年代末期，国际形势动荡不安，香港经济的高度发展和腾飞、独立电影制片机构的风起云涌，具有正义感的影视工作者鄙弃“四头”（噱头、拳头、枕头、鬼头）影片而开拓新路。在这样的背景下，一批从国外电影学院毕业回港并从事电视编导工作的年轻导演，他们本着对电影的热诚，及年青人的独特创意和社会触觉，拍摄出了一批完全不同于传统香港电影的充满个人色彩的新潮电影，掀起香港电影新浪潮，为香港电影带来了富神采而短暂的变奏。</p>
+				<p>20世纪80年代初，台湾一批30多岁左右的年轻导演，掀起的一场电影运动（台湾新电影运动）——现实主义倾向、人文主义追求。这些年轻导演迅速崛起，拍摄了一批形式风格、主题意蕴都与过去大相径庭的影片，从此，台湾电影在一定程度上摆脱了此前政治意识形态和商业票房双重压力的束缚，在个人成长经验的书写中和在“本土”与“乡愁”的纽结中走向一个艺术电影、文化电影 和作者电影的新时代。 </p>
+				<p>改革开放之后的内地，政治、经济和文化中涌现出了一种全新的律动，然而历史的阴影却无法轻易消散,转而在各种文艺思潮中不断涌现。大陆第五代电影正是在这样的背景之下横空出世。这些影片大都面向中国的历史、文化和传统，以一种独特的空间化意象，如绵延而贫瘠的黄土地、浩瀚的黄河、 壮丽的戈壁和沙漠、没有现代文明点染的草原、古旧的深宅、被压抑和被禁锢的生命欲望、狂迷乱舞的红高粱等，创造了一个独特的历史视域里的中国，因此，对民族历史和民族性生存意象的捕捉构成了第五代最具颠覆性的美学创造。 </p>
+			</div>
+			<!--新时期以来的电影的相关图片与链接-->
+			<div class="thirdSample">
+				<a href="https://baike.baidu.com/item/%E6%8A%95%E5%A5%94%E6%80%92%E6%B5%B7" target="_blank"><img src="img/poster7.jpg" alt="投奔怒海海报"></a>
+				<a href="https://baike.baidu.com/item/%E5%85%89%E9%98%B4%E7%9A%84%E6%95%85%E4%BA%8B/6465" target="_blank"><img src="img/poster8.jpg" alt="光阴的故事海报"></a>
+				<a href="https://baike.baidu.com/item/%E7%BA%A2%E9%AB%98%E7%B2%B1/18820?fr=aladdin" target="_blank"><img src="img/poster9.jpg" alt="红高粱海报"></a>
+			</div>
+		</article>
+	</main>
+	
+	<footer>
+		<!-- === 开始页脚级内容 === -->
+		<div class="footerContainer">
+			<p>&#9825;&nbsp;&nbsp;THANKS FOR YOUR READING&nbsp;&nbsp;&#9825;</p>
+			<hr>
+			<p>Copyright©2020 Hirstory of Film. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;Collating data by 影史馆</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>关于我们</title>
+		<style>
+			<!--
+			*{margin:0 auto;}
+			.container{
+				margin:0 0px;
+			}/*设置大框*/
+			.naviContainer{
+				width:100%;
+				height:60px;
+				background-color:#FFFFFF;
+				/*overflow:hidden;*/
+				position:fixed;
+			}
+			/*设置导航栏样式*/
+			.naviContainer ul li{
+				float:left;
+				list-style:none;
+				width:200px;
+				height:60px;
+				border-left:1px solid #ccc;
+				text-align:center;
+				line-height:50px;
+				padding-top:0px;
+				background: #FFFFFF;
+			}
+			/*对顶部导航的样式修改*/
+			.naviContainer ul li a{
+				color:#000000;
+				text-decoration:none;
+				display:block;
+			}
+			/*鼠标放上去变色*/
+			.naviContainer ul li a:hover{
+				color:#9D9D9D;
+			}
+			/*点击后字体变黑色*/
+			.naviContainer ul li a:active{
+				color:#FFFFFF;
+			}
+			/*下拉菜单设置*//*新增*/
+			.naviContainer ul li ul{
+				padding-left:0px;
+				margin-top:10px;
+			}
+			.naviContainer ul li ul li{
+				display:none;
+				width:200px;
+				height:50px;
+				float:initial;
+				text-align:center;
+			}
+			.naviContainer ul li:hover ul li{
+				display:block;
+			}		
+			.naviContainer ul li:hover{
+				background:#011B42;
+				width:200px;
+				height:60px;
+			}
+			/*正文文本标题样式*/
+			.home{
+				font-size:26px;
+				width:200px;
+			}/*设置首页字体*/
+			/*无表单边框*/
+			fieldset{
+				border:none;
+			}
+			.search input{
+				height:30px;
+				text-align: center;
+			}
+			/*定位：居导航栏右侧*/
+			.search{
+				position:absolute;
+				left:80.1%;
+				top:9px;
+			}
+			/*提交按钮样式*/
+			.goBtn{
+				background-color: #5C5C5C;
+				border: none;
+				border-radius: 4px;
+				box-shadow: 2px 2px 2px #333;
+				color: #FFFFFF;
+				padding: 6px 6px;
+				text-shadow: 1px 1px 0px #777;
+			}
+			/*当前页面字体加粗标识*//*新增*/
+			.bold{
+				font-weight:bold;
+			}
+		  /*.headerIcon{
+				float:right;
+				margin-top:5px;
+				margin-right:80px;
+			}*//*搜索图标*/
+			.mainContainer{
+				background-color:#000000;
+				overflow:hidden;
+				padding:60px;
+			}/*设置主体框*/
+			.mainCaption{
+				color:#FFFFFF;
+				text-align:center;
+				letter-spacing:6px;
+				margin-top:50px;
+				font-family:kaiti;
+				font-weight:bold;
+			}/*设置主体标题*/
+			.mainfirstWord{
+				font-size:20px;
+				text-align:left;
+				color:#FFFFFF;
+				margin-left:130px;
+				margin-top:40px;
+				letter-spacing:5px;
+				font-family:kaiti;
+				font-weight:bold;
+			}/*设置主体下一级字体*/
+			.mainsecondWord{
+				font-size:16px;
+				text-align:left;
+				color:#FFFFFF;
+				margin-left:130px;
+				margin-top:40px;
+				letter-spacing:5px;
+				font-family:kaiti;
+			}/*设置主体普通字体*/
+			.mainPicture{
+				float:right;
+				padding-bottom:60px;
+				padding-right:50px;
+			}/*设置主体图片*/
+			.asideContainer{
+				overflow:hidden;
+				padding:30px;
+			}/*设置附注框*/
+			.asideCaption{
+				color:#000000;
+				text-align:center;
+				letter-spacing:6px;
+				margin-top:30px;
+				font-family:kaiti;
+				font-weight:bold;
+				font-size:25px;
+			}/*设置附注标题*/
+			.webbigContainer{
+				list-style:none;
+			}/*设置推荐网站框*/
+			.webContainer{
+				float:left;
+				padding:10px;
+				display:inline;
+			}/*设置单个网站框*/
+			.webPicture{
+				margin:0 auto;
+				padding:10px;
+			}/*设置网站图*/
+			.webWord{
+				text-align:center;
+				font-size:15px;
+				letter-spacing:4px;
+				font-weight:bold;
+				font-family:kaiti;
+			}/*设置网站字体*/
+			.picContainer{
+				width:800px;
+				margin-left:350px;
+			}/*设置网站图片框*/
+			.picContainer ul li a{
+				text-decoration:none;
+				color:#000000;
+				font-family:wellfleet;
+			}/*设置网站链接*/
+			.footerContainer{
+				overflow:hidden;
+				padding:20px;
+				background-color:#000000;
+			}/*设置脚注框*/
+			.footerWord{
+				font-size:13px;
+				text-align:center;
+				color:#FFFFFF;
+				letter-spacing:3px;
+				line-height:35px;
+				font-family:wellfleet;
+			}/*设置脚注文字*/
+			-->
+		</style>
+	</head>
+
+	<body>
+		<!--这是开始-->
+		<div class="container">
+			<header>
+				<!--这是导航栏-->
+				<div class="naviContainer">
+					<nav>
+						<ul style="padding-left:0px;">
+							<li>
+								<a href="../index.html"><span class="home">影史馆</span></a>
+							</li>
+							<li>
+								<a href="../WorldFilmHistory/WorldFilmHistory.html">世界电影史</a>
+								<ul>
+									<li>
+										<a href="../WorldFilmHistory/WorldFilmHistory.html#T1">早期电影</a>
+									</li>
+									<li>
+										<a href="../WorldFilmHistory/WorldFilmHistory.html#T2">无声电影</a>
+									</li>
+									<li>
+										<a href="../WorldFilmHistory/WorldFilmHistory.html#T3">有声电影</a>
+									</li>
+									<li>
+										<a href="../WorldFilmHistory/WorldFilmHistory.html#T4">彩色电影</a>
+									</li>
+									<li>									
+										<a href="../WorldFilmHistory/WorldFilmHistory.html#T5">当代电影</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="../ChineseFilmHistory/ChineseFilmHistory.html">中国电影史</a>
+								<ul>
+									<li>
+										<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P1">早期电影时期</a>
+									</li>
+									<li>
+										<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P2">十七年时期的电影</a>
+									</li>
+									<li>
+										<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P3">新时期以来的电影</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="../oscar/oscar.html">奥斯卡最佳影片选</a>
+							</li>
+							<li>
+								<a href="AboutUs.html">
+									<span class="bold">关于我们</span>
+								</a>
+							</li>
+							<li>
+								<a href="../LogIn/LogIn.html">登录</a>
+							</li>
+						</ul>
+					</nav>
+				<!--新增的搜索框部分-->
+					<div class="search">
+						<form method="get">
+							<fieldset>
+								<input type="search" placeholder="输入你想查找的内容">
+								<input type="submit" value="go" class="goBtn"/>
+							</fieldset>
+						</form>
+					</div>
+					<!--<div class="headerIcon">
+						<img src="img/search.png" alt="search" width="20" height="20">
+					</div>-->
+				</div>
+				<!--导航结束--> 
+			</header>
+			
+			<main class="mainContainer">
+				<!--这是主体-->
+				<h1 class="mainCaption">关于我们</h1>
+				<p class="mainfirstWord">创作理念</p>
+				<p class="mainsecondWord">
+					这是一个科普类型的网站。主要是为了让用户更加了解电影，旨在向用户展示<br>
+					电影从诞生到现在繁荣发展的历史，详细地阐述了电影发展史各阶段的特点，<br>
+					并且对电影制作各方面的相关知识进行了简短的概括，内容详尽且精炼。
+				</p>
+				<p class="mainfirstWord">项目成员</p>
+				<p class="mainsecondWord">胡瑞岚 陈雅淇 袁翠华</p>
+				<p class="mainfirstWord">联系我们</p>
+				<p class="mainsecondWord">
+					地址：四川省南充市师大路西华师范大学<br>
+					单位：西华师范大学新闻传播学院<br>
+					邮箱：335646317@qq.com<br>
+					电话：15828203663
+				</p>
+				<img class="mainPicture" src="img/picture.jpg" alt="picture of about us">
+				<!--主体结束-->
+			</main>
+			
+			<aside class="asideContainer">
+				<!--这是附注-->
+				<p class="asideCaption">推荐网站</p>
+				<div class="picContainer">
+					<ul class="webbigContainer">
+						<li class="webContainer" style="margin-right:40px">
+							<a href="http://www.mtime.com/" title="Mtime" target="_blank">
+								<img class="webPicture" src="img/Mtime.png" alt="Mtime" width="100" height="100">
+								<p class="webWord">Mtime时光网</p>
+							</a>
+						</li>
+						<li class="webContainer" style="margin-right:40px">
+							<a href="https://movie.douban.com/" title="douban" target="_blank">
+								<img class="webPicture" src="img/douban.jpg" alt="douban" width="100" height="100">
+								<p class="webWord">豆瓣电影</p>
+							</a>
+						</li>
+						<li class="webContainer" style="margin-right:40px">
+							<a href="https://www.imdb.com/" title="IMDB" target="_blank">
+								<img class="webPicture" src="img/IMDB.png" alt="IMDB" width="100" height="100">
+								<p class="webWord">IMDB</p>
+							</a>
+						</li>
+						<li class="webContainer" style="margin-right:40px">
+							<a href="http://www.mvcat.com/" title="mvcat" target="_blank">
+								<img class="webPicture" src="img/mvcat.jpeg" alt="mvcat" width="100" height="100">
+								<p class="webWord">mvcat</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--附注结束-->
+			</aside>
+			
+			<footer class="footerContainer">
+				<!--这是脚注-->
+				<p class="footerWord">&#9825;&nbsp;&nbsp;THANKS FOR YOUR READING&nbsp;&nbsp;&#9825;</p>
+				<br>
+				<hr style="color: #FFFFFF">
+				<br>
+				<p class="footerWord">Copyright©2020 Hirstory of Film. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;Collating data by 影史馆</p>
+			</footer>
+		</div>
+		<!--这里结束-->
+	</body>
+</html>

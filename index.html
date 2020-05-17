@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=2.0,user-scalable=yes">
+<!--网页名-->
+<title>影史馆</title>
+	<style>
+		<!--
+		/*使页面占据整个屏幕*/
+		*{margin:0 auto;}
+		/*顶部导航div框样式*/
+		.naviContainer{
+			width:100%;
+			height:60px;
+			background-color:#FFFFFF;
+			position:fixed;
+			min-width:1400px;
+			/*overflow:hidden;*//*用了下拉菜单就显示不出来了，所以更改后将他注释掉*/
+		}
+		/*设置导航栏样式*/
+		ul li{
+			float:left;
+			list-style:none;
+			width:200px;
+			height:60px;
+			border-left:1px solid #ccc;
+			text-align:center;
+			line-height:50px;
+			background: #FFFFFF;
+		}
+		/*对顶部导航的样式修改*/
+		ul li a{
+			color:#000000;
+			text-decoration:none;
+			display:block;
+			text-transform:uppercase;
+		}
+		/*鼠标放上去变色*/
+		ul li a:hover{
+			color:#9D9D9D;
+		}
+		/*点击后字体变黑色*/
+		ul li a:active{
+			color:#FFFFFF;
+		}
+		/*下拉菜单设置*//*新增*/
+		.naviContainer ul li ul{
+			padding-left:0px;
+			margin-top:10px;
+		}
+		.naviContainer ul li ul li{
+			display:none;
+			width:200px;
+			height:50px;
+			float:initial;
+			text-align:center;
+		}
+		.naviContainer ul li:hover ul li{
+			display:block;
+		}		
+		.naviContainer ul li:hover{
+			background:#011B42;
+			width:200px;
+			height:60px;
+		}
+		/*背景内容设置*/
+		.backgroundContainer{
+			width:100%;
+			height:750px;
+			background:url(img/Background.jpg);
+		}
+		/*无表单边框*/
+		fieldset{
+			border:none;
+		}
+		.search input{
+			height:30px;
+			text-align:center;
+		}
+		/*定位：居导航栏右侧*/
+		.search{
+			position:absolute;
+			left:79.2%;
+			top:9px;
+		}
+		/*提交按钮样式*/
+		.goBtn{
+			background-color: #5C5C5C;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 2px 2px 2px #333;
+			color: #FFFFFF;
+			padding: 6px 6px;
+			text-shadow: 1px 1px 0px #777;
+		}
+		/*文本内容框设置*/
+		.textContainer{
+			width:600px;
+			margin-right:110px;
+			margin-top:500px;
+			float:right;
+		}
+		/*文字样式设置*/
+		p{
+			color:#FFFFFF;
+			text-indent:0px;
+			line-height:50px;
+			font-size:17px;
+		}
+		/*图片位置设置*/
+		.picContainer{
+			padding-top:200px;
+		}
+		/*当前页面字体加粗标识*//*新增*/
+		.bold{
+			font-weight:bold;
+		}
+		-->
+	</style>
+</head>
+	
+<body>
+	<!--顶部导航-->
+	<header>
+		<div class="naviContainer">
+			<nav>
+				<ul style="padding-left:0px">						
+					<li>
+						<a href="index.html" style="font-size: 26px; width: 200px;">
+							<span class="bold">影史馆</span>
+						</a>
+					</li>
+					<li>
+						<a href="WorldFilmHistory/WorldFilmHistory.html">世界电影史</a>
+						<!--新增的下拉菜单-->
+						<ul>
+							<li>
+								<a href="WorldFilmHistory/WorldFilmHistory.html#T1">早期电影</a>
+							</li>
+							<li>
+								<a href="WorldFilmHistory/WorldFilmHistory.html#T2">无声电影</a>
+							</li>
+							<li>
+								<a href="WorldFilmHistory/WorldFilmHistory.html#T3">有声电影</a>
+							</li>
+							<li>
+								<a href="WorldFilmHistory/WorldFilmHistory.html#T4">彩色电影</a>
+							</li>
+							<li>									
+								<a href="WorldFilmHistory/WorldFilmHistory.html#T5">当代电影</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="ChineseFilmHistory/ChineseFilmHistory.html">中国电影史</a>
+						<!--新增的下拉菜单-->
+						<ul>
+							<li>
+								<a href="ChineseFilmHistory/ChineseFilmHistory.html#P1">早期电影时期</a>
+							</li>
+							<li>
+								<a href="ChineseFilmHistory/ChineseFilmHistory.html#P2">十七年时期的电影</a>
+							</li>
+							<li>
+								<a href="ChineseFilmHistory/ChineseFilmHistory.html#P3">新时期以来的电影</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="oscar/oscar.html">奥斯卡最佳影片选</a>
+					</li>
+					<li>
+						<a href="AboutUs/AboutUs.html">关于我们</a>
+					</li>
+					<!--新增的登录板块-->
+					<li>
+						<a href="LogIn/LogIn.html">登录</a>
+					</li>
+				</ul>
+			</nav>
+			<!--新增的搜索框部分-->
+			<div class="search">
+				<form method="get">
+					<fieldset>
+						<input type="search" placeholder="输入你想查找的内容">
+						<input type="submit" value="go" class="goBtn"/>
+						<!--<button type="submit" style="background:url(201818340301-chenyaqi-1003.png); width:25px; height:25px; background-size:20px 20px;"> </button>-->
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<!--正文-->
+	<div class="backgroundContainer">
+		<!--文字内容-->
+		<div class="textContainer">
+			<p>从无声到有声，从黑白到彩色，从胶片到数字，从2D到3D
+				<br>电影经过了漫长的岁月，带着无数个惊险，或感伤或喜悦的记忆向我们走来...
+			</p>
+		</div>
+		<!--图片内容-->
+		<div class="picContainer">
+			<img src="img/picture.jpg" alt="首页素材图">
+		</div>
+	</div>
+</body>
+</html>

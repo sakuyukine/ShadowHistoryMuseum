@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=2.0,user-scalable=yes">
+	<title>奥斯卡最佳影片选</title>
+		<style>
+			<!--
+			*{margin:0 auto;}
+			/*顶部导航div框样式*/
+			.naviContainer{
+				width:100%;
+				height:60px;
+				background-color:#FFFFFF;
+				position:fixed;
+				z-index:2;
+			}
+			/*设置导航栏背景颜色、文字边框、字体颜色*/
+			ul li{
+				float:left;
+				list-style:none;
+				width:200px;
+				height:40px;
+				border-left:1px solid #ccc;
+				text-align:center;
+				line-height:50px;
+				background: #FFFFFF;
+			}
+			/*对顶部导航的样式修改*/
+			ul li a{
+				color:#000000;
+				text-decoration:none;
+				display:block;
+			}
+			/*鼠标放上去变色*/
+			ul li a:hover{
+				color:#9D9D9D;
+			}
+			/*点击后字体变色*/
+			ul li a:active{
+				color:#FFFFFF;
+			}
+			/*下拉菜单设置*//*新增*/
+			.naviContainer ul li ul{
+				padding-left:0px;
+				margin-top:10px;
+			}
+			.naviContainer ul li ul li{
+				display:none;
+				width:200px;
+				height:50px;
+				float:initial;
+				text-align:center;
+			}
+			.naviContainer ul li:hover ul li{
+				display:block;
+			}		
+			.naviContainer ul li:hover{
+				background:#011B42;
+				width:200px;
+				height:60px;
+			}
+			/*无表单边框*/
+			fieldset{
+				border:none;
+			}
+			.search input{
+				height:30px;
+				text-align:center;
+			}
+			/*定位：居导航栏右侧*/
+			.search{
+				position:absolute;
+				left:80.1%;
+				top:9px;
+			}
+			/*提交按钮样式*/
+			.goBtn{
+				background-color: #5C5C5C;
+				border: none;
+				border-radius: 4px;
+				box-shadow: 2px 2px 2px #333;
+				color: #FFFFFF;
+				padding: 6px 6px;
+				text-shadow: 1px 1px 0px #777;
+			}
+			.mainContainer{
+				margin:0 auto;
+				padding:40px;
+				position:relative;
+				overflow:hidden;
+			}/*正文框*/
+			h1{
+				font-size:30px;
+				text-align:center;
+				margin:0 auto;
+				padding:30px;
+				margin-top:30px;
+				color:#FFFFFF;
+				letter-spacing:10px;
+			}/*标题格式*/
+			
+			/*当前页面字体加粗标识*//*新增*/
+			.bold{
+				font-weight:bold;
+			}
+			.firstContainer{
+				float:left;
+				padding:30px;
+				overflow:hidden;
+			}/*左边第一张图片*/
+			.secondContainer{
+				float:left;
+				padding:30px;
+				overflow:hidden;
+			}/*左边第一张图片*/
+			.firstPicture{
+				margin:0 auto;
+				padding:10px;
+			}
+			.picContainer{
+				width:1200px;
+				margin-left:160px;
+				overflow:hidden;
+			}
+			.figcaption{
+				text-align:left;
+				text-indent:2em;
+				font-size:15px;
+				letter-spacing:4px;
+				font-weight:bold;
+				font-family:kaiti;
+				width:200px;
+				color:#FFFFFF;
+			}/*图片注释*/
+			.asideContainer{
+				background-color:#000000;
+				text-align:center;
+				padding:10px;
+			}/*附注框*/
+			.asideText{
+				font-family:kaiti;
+				font-size:13px;
+				color:#938989;
+				line-height:20px;
+				letter-spacing:3px;
+			}/*附注文本*/
+			.footerContainer{
+				width:100%;
+				margin:0 auto;
+				text-align:center;
+				background-color:#F3F3F3;
+				padding-bottom:20px;
+			}/*脚注框*/
+			.footerText{
+				font-size:13px;
+				letter-spacing:3px;
+				line-height:35px;
+				text-align:center;
+				font-family:wellfleet;
+			}/*脚注文本*/
+			.background{
+				background:url(img/Background.jpeg);
+			}
+			-->
+		</style>
+	</head>
+	
+	<body>
+		<div class="background" style="background-repeat: no-repeat;background-size: 100% 100%;background-attachment: fixed;">
+		<header>
+			<div class="naviContainer" >
+				<nav>
+					<ul style="padding-left:0px; padding-left:0px;margin-top: 0px;margin-bottom: 0px;">
+						<li>
+							<a href="../index.html" style="font-size:26px;width:200px">影史馆</a>
+						</li>
+						<li>
+							<a href="../WorldFilmHistory/WorldFilmHistory.html">世界电影史</a>
+							<ul>
+								<li>
+									<a href="../WorldFilmHistory/WorldFilmHistory.html#T1">早期电影</a>
+								</li>
+								<li>
+									<a href="../WorldFilmHistory/WorldFilmHistory.html#T2">无声电影</a>
+								</li>
+								<li>
+									<a href="../WorldFilmHistory/WorldFilmHistory.html#T3">有声电影</a>
+								</li>
+								<li>
+									<a href="../WorldFilmHistory/WorldFilmHistory.html#T4">彩色电影</a>
+								</li>
+								<li>									
+									<a href="../WorldFilmHistory/WorldFilmHistory.html#T5">当代电影</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="../ChineseFilmHistory/ChineseFilmHistory.html">中国电影史</a>
+							<ul>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P1">早期电影时期</a>
+								</li>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P2">十七年时期的电影</a>
+								</li>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P3">新时期以来的电影</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="oscar.html">
+								<span class="bold">奥斯卡最佳影片选</span>
+							</a>
+						</li>
+						<li>
+							<a href="../AboutUs/AboutUs.html">关于我们</a>
+						</li>
+						<li>
+							<a href="../LogIn/LogIn.html">登录</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="search">
+					<form method="get">
+						<fieldset>
+							<input type="search" placeholder="输入你想查找的内容">
+							<input type="submit" value="go" class="goBtn"/>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		 </header>
+		<main>
+ 			<div class="mainContainer">
+				<!--正文开始-->
+				<article>
+					<h1>奥斯卡最佳影片选</h1>
+					<hr>
+					<div class="picContainer">
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E7%BB%BF%E7%9A%AE%E4%B9%A6/22907809" title="绿皮书" target="_blank">
+								<img class="firstPicture" src="img/poster91.jpg" alt="绿皮书" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:157px">
+								<p class="figcaption">
+									第91届获奖作品。该片改编自真人真事，讲述了保镖托尼被聘用为世界上优秀的爵士钢琴家唐开车。钢琴家将从纽约开始举办巡回演奏，俩人之间一段跨越种族、阶级的友谊的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E6%9C%88%E5%85%89%E7%94%B7%E5%AD%A9/20104232" title="月光男孩" target="_blank">
+								<img class="firstPicture" src="img/poster89.jpg" alt="月光男孩" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:157px">
+								<p class="figcaption">
+									第89届获奖作品。该片讲述了喀戎从孩童到青年时期，逐步发现自己的性取向，经受外界非议和内心挣扎后，找到真正自我的故事。2017年2月26日，该片获得第89届奥斯卡金像奖最佳影片奖。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E9%B8%9F%E4%BA%BA/815693" title="鸟人" target="_blank">
+								<img class="firstPicture" src="img/poster87.jpg" alt="鸟人" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:157px;">
+								<p class="figcaption">
+									第87届获奖作品。影片讲述一个过气的超级英雄演员，企图借百老汇咸鱼翻身的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E5%9B%BD%E7%8E%8B%E7%9A%84%E6%BC%94%E8%AE%B2/30962" title="国王的演讲" target="_blank">
+								<img class="firstPicture" src="img/poster83.jpg" alt="国王的演讲" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:157px">
+								<p class="figcaption">
+									第83届获奖作品。影片讲述了1936年英王乔治五世逝世，王位留给了患严重口吃的艾伯特王子，后在语言治疗师莱纳尔·罗格的治疗下，克服障碍，在二战前发表鼓舞人心的演讲。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E7%BE%8E%E4%B8%BD%E5%BF%83%E7%81%B5/5662" target="_blank">
+								<img class="firstPicture" src="img/poster74.jpg" alt="美丽心灵" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第74届获奖作品。该片讲述了患有精神分裂症的数学家约翰·福布斯·纳什，在博弈论和微分几何学领域潜心研究，最终获得诺贝尔经济学奖的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E8%8E%8E%E7%BF%81%E6%83%85%E5%8F%B2" target="_blank">
+								<img class="firstPicture" src="img/poster71.jpg" alt="莎翁情史" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第71届获奖作品。影片以莎士比亚创作《罗密欧与朱丽叶》为引线，讲述了一代文豪莎士比亚的的人物轶事及其浪漫的爱情史，并点出其创作《罗密欧与朱丽叶》的主因及过程。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/6162581" target="_blank">
+								<img class="firstPicture" src="img/poster70.jpg" alt="泰坦尼克号" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第70届获奖作品。影片以1912年泰坦尼克号沉没的事件为背景，讲述了处于不同阶层的两个人穷画家杰克和贵族女露丝抛弃世俗的偏见坠入爱河，最终杰克把生命的机会让给了露丝的感人故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E9%98%BF%E7%94%98%E6%AD%A3%E4%BC%A0/12696704" target="_blank">
+								<img class="firstPicture" src="img/poster67.jpg" alt="阿甘正传" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第67届获奖作品。电影改编自美国作家温斯顿·格卢姆于1986年出版的同名小说，描绘了先天智障的小镇男孩福瑞斯特·甘自强不息，最终“傻人有傻福”地得到上天眷顾，在多个领域创造奇迹的励志故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E8%BE%9B%E5%BE%B7%E5%8B%92%E7%9A%84%E5%90%8D%E5%8D%95/1356385?fr=aladdin" target="_blank">
+								<img class="firstPicture" src="img/poster66.jpg" alt="辛德勒的名单" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:193px;">
+								<p class="figcaption">
+									第66届获奖作品。该片改编自澳大利亚小说家托马斯·肯尼利的同名小说，讲述了一名身在波兰的的德国人辛德勒，在二战时雇用了1100多名犹太人在他的工厂工作，帮助他们逃过被屠杀的劫数。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E6%B2%89%E9%BB%98%E7%9A%84%E7%BE%94%E7%BE%8A/33844?fr=aladdin" target="_blank">
+								<img class="firstPicture" src="img/poster64.jpg" alt="沉默的羔羊" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:193px;">
+								<p class="figcaption">
+									第64届获奖作品。该片讲述了实习特工克拉丽斯为了追寻杀人狂野牛比尔的线索，前往一监狱访问精神病专家汉尼拔博士，汉尼拔给克拉丽斯提供了线索，最终克拉丽斯找到了野牛比尔，并将其击毙。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E6%9C%AB%E4%BB%A3%E7%9A%87%E5%B8%9D/7933" target="_blank">
+								<img class="firstPicture" src="img/poster60.jpg" alt="末代皇帝" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:193px;">
+								<p class="figcaption">
+									第60届获奖作品。该片讲述了中国最后一个皇帝爱新觉罗·溥仪从当上皇帝开始到最终成为一名普通公民之间横跨60年的跌宕一生。1988年，该片获得第60届奥斯卡金像奖最佳影片的奖项。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E6%95%99%E7%88%B6/4361541" target="_blank">
+								<img class="firstPicture" src="img/poster45.jpg" alt="教父" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:193px;">
+								<p class="figcaption">
+									第45届获奖作品。该片改编自马里奥·普佐的同名小说，讲述了以维托·唐·柯里昂为首的黑帮家族的发展过程以及柯里昂的小儿子迈克如何接任父亲成为黑帮首领的故事。改片2007年被美国电影协会选为“百年百佳影片第二位”。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E5%B7%B4%E9%A1%BF%E5%B0%86%E5%86%9B" target="_blank">
+								<img class="firstPicture" src="img/poster43.jpg" alt="巴顿将军" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第43届获奖作品。影片主要介绍了1943年在北非，英美盟军遭到绰号叫“沙漠之狐”隆美尔元帅率领的德军反击，展开了一场大规模的战斗，结果美军遭到惨败陷入了困境的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E5%8D%88%E5%A4%9C%E7%89%9B%E9%83%8E" target="_blank">
+								<img class="firstPicture" src="img/poster42.jpg" alt="午夜牛郎" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第42届获奖作品。该片讲述了穷困潦倒的乔是如何在纽约生活，以及发生在乔与里佐之间的故事。1969年5月25日，该片在美国上映，并成为美国第一部实行X级分级制的影片。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E7%AA%88%E7%AA%95%E6%B7%91%E5%A5%B3/9286604" target="_blank">
+								<img class="firstPicture" src="img/poster37.jpg" alt="窈窕淑女" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第37届获奖作品。《窈窕淑女》是华纳兄弟影业于1964年出品的歌舞片该片改编自萧伯纳的戏剧剧作《卖花女》，讲述下层阶级的卖花女被中产阶层语言学教授改造成优雅贵妇的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E5%AE%BE%E8%99%9A/16539" target="_blank">
+								<img class="firstPicture" src="img/poster32.jpg" alt="宾虚" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:176px;">
+								<p class="figcaption">
+									第32届获奖作品。《宾虚》是米高梅电影公司出品，是由导演威廉·惠勒执导的民族苦难历史片。该片改编自卢·华莱士的同名长篇小说。讲述了犹太人宾虚同罗马指挥官玛瑟拉之间的爱恨情仇及其反抗罗马帝国压迫故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E7%8E%AF%E6%B8%B8%E4%B8%96%E7%95%8C%E5%85%AB%E5%8D%81%E5%A4%A9/3644790?fr=aladdin" target="_blank">
+								<img class="firstPicture" src="img/poster29.jpg" alt="环游世界八十天" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:106px;">
+								<p class="figcaption">
+									第29届获奖作品。该片讲述了英国贵族福克经历一场惊险刺激、遭遇千奇百怪的环球旅程。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E9%9D%92%E5%B1%B1%E7%BF%A0%E8%B0%B7/87077?fr=aladdin" target="_blank">
+								<img class="firstPicture" src="img/poster14.jpg" alt="青山翠谷" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:106px;">
+								<p class="figcaption">
+									第14届获奖作品。该片改编自英国小说家李察·勒埃林的同名小说，讲述了工人运动使得摩根家中的两代人发生矛盾的故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E4%B9%B1%E4%B8%96%E4%BD%B3%E4%BA%BA/9369298" target="_blank">
+								<img class="firstPicture" src="img/poster12.jpg" alt="乱世佳人" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:106px;">
+								<p class="figcaption">
+									第12届获奖作品。影片以美国南北战争为背景，讲述了主人公斯嘉丽与白瑞德之间一段跌宕起伏的爱情故事。
+								</p>
+							</div>
+						</div>
+						<div class="firstContainer">
+							<a href="https://baike.baidu.com/item/%E4%B8%80%E5%A4%9C%E9%A3%8E%E6%B5%81/61157?fr=aladdin" target="_blank">
+								<img class="firstPicture" src="img/poster7.jpg" alt="一夜风流" width="200" height="300">
+							</a>
+							<div style="background: rgba(221,221,221,0.3);height:106px;">
+								<p class="figcaption">
+									第7届获奖作品。该片讲述了一个逃出家门的富家女和一个报纸记者之间的爱情故事。
+								</p>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!--正文结束-->
+			</div>
+		</main>
+		<aside>
+			<!--附注开始-->
+			<div class="asideContainer">
+				<br>
+				<p class="asideText">
+					内容仍待添加，敬请期待<br>
+					附：<a href="https://movie.douban.com/top250" title="豆瓣P250" target="_blank">豆瓣精选影片P250</a>
+				</p>
+				<br>
+			</div>
+		</aside>
+		<footer>
+			<!--脚注开始-->
+			<div class="footerContainer">
+				<br>
+				<p class="footerText">&#9825;&nbsp;&nbsp;THANKS FOR YOUR READING&nbsp;&nbsp;&#9825;</p>
+				<br>
+				<hr>
+				<br>
+				<p class="footerText">Copyright©2020 Hirstory of Film. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;Collating data by 影史馆</p>
+			</div>
+		</footer>
+		</div>
+	</body>
+</html>

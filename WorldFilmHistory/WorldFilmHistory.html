@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=2.0,user-scalable=yes">
+<title>世界电影史</title>
+	<!--这是网页样式-->
+	<style>
+		<!--
+		/*正文居中,文字颜色白色*/
+		*{
+			text-align:center;
+			margin:0 auto;
+			height:auto;
+		}
+		/*顶部导航div框样式*/
+		.naviContainer{
+			width:100%;
+			height:60px;
+			background-color:#FFFFFF;
+			position:fixed;
+			/*overflow:hidden;*/
+		}
+		/*设置导航栏样式*/
+		ul li{
+			float:left;
+			list-style:none;
+			width:200px;
+			height:60px;
+			border-left:1px solid #ccc;
+			text-align:center;
+			line-height:50px;
+			background: #FFFFFF;
+		}
+		/*对顶部导航的样式修改*/
+		ul li a{
+			color:#000000;
+			text-decoration:none;
+			display:block;
+		}
+		/*鼠标放上去变色*/
+		ul li a:hover{
+			color:#9D9D9D;
+		}
+		/*点击后字体变色*/
+		ul li a:active{
+			color:#FFFFFF;
+		}
+		/*下拉菜单设置*//*新增*/
+		.naviContainer ul li ul{
+			padding-left:0px;
+			margin-top:10px;
+		}
+		.naviContainer ul li ul li{
+			display:none;
+			width:200px;
+			height:50px;
+			float:initial;
+			text-align:center;
+		}
+		.naviContainer ul li:hover ul li{
+			display:block;
+		}		
+		.naviContainer ul li:hover{
+			background:#011B42;
+			width:200px;
+			height:60px;
+		}
+		/*当前页面字体加粗标识*//*新增*/
+		.bold{
+			font-weight:bold;
+		}
+		/*无表单边框*/
+		fieldset{
+			border:none;
+		}
+		.search input{
+			height:30px;
+		}
+		/*定位：居导航栏右侧*/
+		.search{
+			position:absolute;
+			left:80.1%;
+			top:9px;
+		}
+		/*提交按钮样式*/
+		.goBtn{
+			background-color: #5C5C5C;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 2px 2px 2px #333;
+			color: #FFFFFF;
+			padding: 6px 6px;
+			text-shadow: 1px 1px 0px #777;
+		}
+		#early{
+			width:100%;
+			height:1000px;
+			background:url(img/firstBackground.jpg) no-repeat; 
+			background-size:100% 90%;
+			opacity:1;
+			z-index:-1;
+		}
+		#early p{
+			height:50px;
+			text-align:center;
+			position:absolute;
+			font-size:50px;
+			letter-spacing:10px;
+			font-family:"宋体";
+			color: #ffffff;
+		}
+   		#firstText{
+			width:100%;
+   			height:540px;
+   			background:#F0F0F0;
+            z-index:1;
+            top:750px ;
+            position:relative; 
+   		}
+   		#firstText p{
+   			font-family:wellfleet;
+			font-size:15px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:left;
+			text-indent:2em;
+			color:#000000;
+			position:absolute;
+   		}
+   		#firstPicture img{
+   			width:300px;
+   			height:330px;
+		}
+		#secondPicture img{
+			width:300px;
+   			height:330px;
+		}
+		#thirdPicture img{
+			width:300px;
+   			height:330px;
+		}
+		#fourthPicture img{
+			width:300px;
+   			height:330px;
+		}
+		#fifthPicture img{
+			width:300px;
+			height:330px;
+		}
+        #silent{
+			width:100%;
+			height:1000px;
+			background:url(img/secondBackground.jpg) no-repeat;
+			background-size:100% 90%;
+			opacity:1;
+			z-index:1;
+		}
+		#silent p{
+			height:50px;
+       		text-align:center;
+			position:absolute;
+			font-size:50px;
+			letter-spacing:10px;
+			font-family:"宋体";
+			color:#ffffff;
+		}
+		#secondText{
+			width:100%;
+   			height:540px;
+   			background:#F0F0F0;
+            z-index:1;
+            top:750px;
+            position:relative;
+		}
+		#secondText p{
+			font-family:wellfleet;
+			font-size:15px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:left;
+			text-indent:2em;
+			color:#000000;
+			position:absolute;
+		}
+		#audiovisual{
+			width:100%;
+			height:1000px;
+			background:url(img/thirdBackground.jpg) no-repeat; 
+			background-size:100% 90%;
+			opacity:1;
+			z-index:1;
+		}
+		#audiovisual p{
+			height:50px;
+			text-align:center;
+			position:absolute;
+			font-size:50px;
+			letter-spacing:10px;
+			font-family:"宋体";
+			color:#ffffff;
+		}
+		#thirdText{
+			width:100%;
+   			height:540px;
+   			background:#F0F0F0;
+            z-index:1;
+            top:750px;
+			position:relative;
+		}
+		#thirdText p{
+			font-family:wellfleet;
+			font-size:15px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:left;
+			text-indent:2em;
+			color:#000000;
+			position:absolute;
+		}
+		#color{
+			width:100%;
+			height:1000px;
+			background:url(img/fourthBackground.jpg) no-repeat; 
+			background-size:100% 90%;
+			opacity:1;
+			z-index:1;
+		}
+		#color p{
+			height:50px;
+			text-align:center;
+			position:absolute;
+			font-size:50px;
+			letter-spacing:10px;
+			font-family:"宋体";
+			color:#ffffff;
+		}
+		#fourthText{
+			width:100%;
+   			height:540px;
+   			background:#F0F0F0;
+            z-index:1;
+            top:750px;
+            position:relative;
+		}
+		#fourthText p{
+			font-family:wellfleet;
+			font-size:15px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:left;
+			text-indent:2em;
+			color:#000000;
+			position:absolute;
+		}
+		#contemporary{
+			width:100%;
+			height:1000px;
+			background:url(img/fifthBackground.jpg) no-repeat; 
+			background-size:100% 90%;
+			opacity:1;
+			z-index:1;
+		}
+		#contemporary p{
+			height:50px;
+			text-align:center;
+			position:absolute;
+			font-size:50px;
+			letter-spacing:10px;
+			font-family:"宋体";
+			color:#ffffff;
+		}
+		#fifthText{
+			width:100%;
+   			height:540px;
+   			background:#F0F0F0;
+            z-index:1;
+            top:750px;
+            position:relative;
+		}
+		#fifthText p{
+			font-family:wellfleet;
+			font-size:15px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:left;
+			text-indent:2em;
+			color:#000000;
+			position:absolute;
+		}
+		#footer{
+			width:100%;
+			color:#000000;
+			position:absolute;
+			margin-top:340px;
+			padding-top:20px;
+			padding-bottom:20px;
+		}
+		.footer{
+			font-size:13px;
+			letter-spacing:3px;
+			line-height:35px;
+			text-align:center;
+			font-family:wellfleet;
+		}
+		-->
+	</style>
+</head>
+
+<body>
+	<div id="main" style="width: 100%;height: auto;min-width:1400px;">
+	<!--顶部导航-->
+		<header>
+			<div class="naviContainer">
+				<nav>
+					<ul style="padding-left:0px;">
+						<li>
+							<a href="../index.html" style="font-size: 26px; width: 200px;">影史馆</a>
+						</li>
+						<li>
+							<a href="WorldFilmHistory.html">
+								<span class="bold">世界电影史</span>
+							</a>
+							<ul>
+								<li>
+									<a href="#T1">早期电影</a>
+								</li>
+								<li>
+									<a href="#T2">无声电影</a>
+								</li>
+								<li>
+									<a href="#T3">有声电影</a>
+								</li>
+								<li>
+									<a href="#T4">彩色电影</a>
+								</li>
+								<li>
+									<a href="#T5">当代电影</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="../ChineseFilmHistory/ChineseFilmHistory.html">中国电影史</a>
+							<ul>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P1">早期电影时期</a>
+								</li>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P2">十七年时期的电影</a>
+								</li>
+								<li>
+									<a href="../ChineseFilmHistory/ChineseFilmHistory.html#P3">新时期以来的电影</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="../oscar/oscar.html">奥斯卡最佳影片选</a>
+						</li>
+						<li>
+							<a href="../AboutUs/AboutUs.html">关于我们</a>
+						</li>
+						<li>
+							<a href="../LogIn/LogIn.html">登录</a>
+						</li>
+					</ul>
+				</nav>
+				<!--新增的搜索框部分-->
+				<div class="search">
+					<form method="get">
+						<fieldset>
+							<input type="search" placeholder="输入你想查找的内容">
+							<input type="submit" value="go" class="goBtn"/>
+						</fieldset>
+					</form>
+				</div>
+				<!--<div id="searchPicture">
+						<img src="img/search.png" alt="search" width="20" height="20" style="margin-top:15px; margin-left:60px">
+					</div>
+				</div>-->
+			</div>
+		</header>
+	
+	<!--正文内容-->
+		<main>
+			<div id="mainContainer">
+				
+			<!--早期电影部分-->
+				<div id="early">
+					<p id="T1" style="top: 40%; left: 43%;">早期电影</p>
+					<p style="top: 52%; left: 38%;">Early films</p>
+					<div id="firstText">
+						<p style="width: 45%;margin-left: 40px; margin-top:90px; ">世界上第一部电影是英国1888年的黑白无声纪录短片《朗德海花园场景》(Roundhay Garden Scene)，共计2秒50帧，记录了两个男人与两个女人在花园做着一些滑稽的动作。随着技术的不断变革与进步， 1895年3月22日，法国的奥古斯特·卢米埃尔和路易·卢米埃尔兄弟在巴黎法国科技大会上首放影片《工厂的大门》。表现当时法国里昂卢米埃尔工厂放工时的情景，片长仅一分多钟，在电影史上占有重要地位.同年12月28日，他们在巴黎的卡普辛路14号大咖啡馆里，正式向社会公映了他们自己摄制的一批纪实短片，有《火车到站》、《水浇园丁》、《婴儿的午餐》、《工厂的大门》等12部影片。这个时期的电影在技术上推行标准化，艺术上讲求构图技巧。但是有很大局限性，这些早期电影过于贴近现实，而且影片时间很短。电影持续放映了一年半时间以后，人们的兴趣就在明显的减弱，以至最后再也无人问津了。
+						</p>
+						<div  id="firstPicture" style="float: right; margin-right: 30px; margin-top:30px;" >
+							<a href="https://baike.sogou.com/v10760308.htm?fromTitle=%E5%B7%A5%E5%8E%82%E7%9A%84%E5%A4%A7%E9%97%A8" title="工厂的大门" target="_blank">
+								<img src="img/LunchHourAtTheLumiereFactory.jpg" style="margin-bottom:140px;" alt="工厂的大门海报图">
+							</a>
+							<a href="https://baike.sogou.com/v58570457.htm?fromTitle=%E6%9C%97%E5%BE%B7%E6%B5%B7%E8%8A%B1%E5%9B%AD%E5%9C%BA%E6%99%AF" title="朗德海花园场景" target="_blank">
+								<img src="img/RoundhayGardenScene.jpg" style="margin-left: 20px;" alt="朗德海花园场景海报图">
+							</a>
+			  			</div>
+		  			</div>
+				</div>
+
+		<!--无声电影部分-->
+			<div id="silent" style="margin-top: 100px;">
+				<p id="T2" style="left:43%; margin-top:400px;">无声电影</p>
+                <p style="left:38%; margin-top:480px;">Silent film</p>
+				<div id="secondText">
+					<p style="width: 45%; margin-top:100px; margin-left: 52%; ">从1908年至1927年，是世界无声电影发展并进入全盛的时期，并涌现了一批世界电影名作和著名的电影艺术家。 1913-1926年，无声电影走向成熟。代表作有《王子寻仙记》、《大独裁者》、《凡尔杜先生》，《淘金记》和《城市之光》等。这些电影具有鲜明的现实感和尖锐的讽刺性及雅俗共赏的大众化特色。20世纪无声电影时代里诞生了的最伟大的默片大师—英国喜剧演员
+						<a href="https://baike.sogou.com/v5165469.htm?fromTitle=%E5%8D%93%E5%88%AB%E6%9E%97" title="查理·卓别林" target="_blank"><span class="nameFont">查理·卓别林</span></a>。萨杜尔先生对卓别林的作品作了如下评论：“卓别林的影片是唯一能为贫苦阶级和最幼稚的群众所欣赏。同时又能为水准最高的观众和学识渊博的知识分子所欣赏的影片”。1936年，卓别林出品了他的最后一部无声片《摩登时代》，标志着无声片的寿终正寝。
+			  		</p>
+					<div id="secondPicture" style="float: left; margin-left: 30px; margin-top:30px;">  
+						<a href="https://baike.sogou.com/v64921540.htm?fromTitle=%E6%91%A9%E7%99%BB%E6%97%B6%E4%BB%A3" title="摩登时代" target="_blank">
+							<img src="img/moderntimes.jpg" alt="摩登时代海报图">
+				   		</a>
+							<img src="img/citylights.jpg" style="margin-left: 20px;margin-bottom:140px;" alt="城市之光海报图">
+					</div>
+				</div>
+			</div>
+		
+		<!--有声电影部分-->
+			<div id="audiovisual" style="margin-top: 100px;">
+				<p id="T3" style="margin-top: 400px;left: 43%;">有声电影</p>
+				<p style="margin-top: 480px;left: 34%; ">Audiovisual film</p>
+				<div id="thirdText">
+					<p style="width: 45%;margin-left: 40px; margin-top:80px; ">与无声电影相对的是有声电影，有声电影诞生初期，许多默片艺术大师对有声电影的出现产生过强烈的贬斥和抵触情绪。但随着它在技术和艺术上不断发展、成熟，以不可阻挡的势头成为电影发展的方向，许多默片大师也开始尝试有声电影的创作。1927年到1945年，电影作为一种艺术走向成熟.1926年《唐·璜》用了“维他风”的唱片伴音系统，成为世界第一部配乐短片。世界上的第一部有声电影是美国1927年的爱情歌舞片《爵士歌手》。讲的是男主突破外界的各种阻挠，历经磨难，最终实现自己成为爵士歌手的理想。它标志着有声电影时代的来临，也是电影走向成熟期的标志 ，实现了电影史上的一次革命，极大发展了电影的本性，为电影艺术开拓了新的天地。1928年，华纳公司的《纽约之光》是第一部真正意义上的有声片。声音使电影由单纯的视觉艺术，发展成视听结合的银幕艺术。自此，有声电影全面推开。至1930年，除卓别林继续拍摄了几部无声片外，全部故事片均为有声片。
+			  		</p>
+					<div id="thirdPicture" style="float: right; margin-right: 30px; margin-top:30px;">
+						<a href="https://baike.sogou.com/v7937839.htm?fromTitle=%E7%88%B5%E5%A3%AB%E6%AD%8C%E6%89%8B" title="爵士歌手" target="_blank">
+							<img src="img/theJazzSinger.jpg" alt="爵士歌手海报图" style="margin-bottom:140px;">
+						</a>
+						<a href="https://baike.sogou.com/v66373863.htm?fromTitle=%E7%BA%BD%E7%BA%A6%E4%B9%8B%E5%85%89" title="纽约之光" target="_blank">
+							<img src="img/theLightofNewYork.jpg" alt="纽约之光海报图"  style="margin-left: 20px;">
+						</a>
+					</div>
+				</div>
+			</div>
+				
+		<!--彩色电影部分-->
+         	<div id="color" style="margin-top: 100px;">
+				<p id="T4" style="margin-top: 400px;left: 43%;">彩色电影</p>
+                <p style="margin-top: 480px;left: 40%; ">Color film</p>
+				<div id="fourthText">
+					<p style="width: 45%; margin-top:50px; margin-left: 52%; ">1935年，美国马摩里安摄制出彩色影片《浮华世界》又译（名利场），标志着世界上第一部彩色电影的出现。色彩真正作为一种元素、手段、风格进入了银幕的世界。由此，开始了彩色影片制作的时代。1939年的《绿野仙踪》是被认为是第一部全彩电影。声音和色彩促使电影更趋近于自然。有的电影创作家，在一部影片中交替使用彩色片和黑白片，因而收到了特殊的艺术效果。电影从此进入了在艺术上精益求精的阶段，并在同其他艺术的关系上，从过去单纯的摹仿吸收进行到有取有舍的阶段。此外，更值得重视的是，电影这时的不再是单纯的娱乐品，而是具有极大的社会影响的艺术门类了。1959年的电影《宾虚》称得上是这股巨片热潮中的巅峰之作，是历史上最伟大的史诗电影，但它同时也宣告了这个巨片时代的结束。除此之外，这个时期还有一些体现电影在这个时期发展变化的作品。1950年的日本影片《罗生门》、1953年由女神奥黛丽赫本主演的《罗马假日》，1957年西德尼·吕特美导演的《十二怒汉》、美国泰隆·鲍华主演的《控方证人》、1959年法国影片《广岛之恋》等.
+			  		</p>
+					<div id="fourthPicture" style="float: left; margin-left: 30px; margin-top:30px;">  
+						<a href="https://baike.sogou.com/v67599.htm?fromTitle=%E5%AE%BE%E8%99%9A" title="宾虚" target="_blank">
+							<img src="img/aTaleofTheChrist.jpg" alt="宾虚海报图">
+						</a>
+						<a href="https://baike.sogou.com/v108876.htm?fromTitle=%E7%BD%97%E7%94%9F%E9%97%A8" title="罗生门" target="_blank">
+							<img src="img/rajomon.jpg" alt="罗生门海报图" style="margin-left: 20px;margin-bottom:140px;">
+						</a>
+					</div>
+				</div>
+			</div>
+				
+         <!--当代电影部分-->
+			<div id="contemporary" style="margin-top: 100px;">
+				<p id="T5" style="margin-top: 400px;left: 43%;">当代电影</p>
+                <p style="margin-top: 480px;left: 33%; ">Contemporary film</p>
+             	<div id="fifthText">
+          	  		<p style="width: 45%;margin-left: 40px; margin-top:120px; ">1960年至今，世界电影从突破创新中走向多样化发展。动漫界出现了日本电影巨头宫崎骏，代表作有《天空之城》、《千与千寻》、《起风了》、《龙猫》、《悬崖上的金鱼姬》 等等。美国有漫威电影70年代之后：《教父》、《龙猫》、《霸王别姬》、《这个杀手不太冷》、《泰坦尼克号》、《喜剧之王》、《闻香识女人》、《活着》、《侏罗纪公园》。21世纪：《阿凡达》、《哪吒之魔童降世》、《复仇者联盟系列》、《流浪地球》《路边野餐》、《我不是药神》、《西西里的美丽传说》、《机器人总动员》。
+			  		</p>
+					<div  id="fifthPicture" style="float: right; margin-right: 30px; margin-top:30px;" >
+						<a href="https://baike.sogou.com/v69268.htm?fromTitle=%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB" title="千与千寻" target="_blank">
+							<img src="img/spiritedaway.jpg" alt="千与千寻海报图" style="margin-bottom:140px;">
+						</a>
+						<a href="https://baike.sogou.com/v64710246.htm?fromTitle=%E9%98%BF%E5%87%A1%E8%BE%BE" title="阿凡达" target="_blank">
+							<img src="img/avatar.jpg" alt="阿凡达海报图" style="margin-left: 20px;">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	
+	<!--页脚内容-->
+		<footer>
+			<div id="footer">
+				<p class="footer">&#9825;&nbsp;&nbsp;THANKS FOR YOUR READING&nbsp;&nbsp;&#9825;</p>
+				<br>
+				<hr>
+				<br>
+				<p class="footer">Copyright©2020 Hirstory of Film. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;Collating data by 影史馆</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
